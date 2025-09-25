@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Plus, Minus, ShoppingBag, CreditCard } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -161,15 +162,17 @@ export function Cart({
             </div>
 
             {/* Checkout Button */}
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="w-full"
-              onClick={onCheckout}
-            >
-              <CreditCard className="h-4 w-4 mr-2" />
-              Proceed to Checkout
-            </Button>
+            <Link to="/payment" className="w-full">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full"
+                onClick={onCheckout}
+              >
+                <CreditCard className="h-4 w-4 mr-2" />
+                Proceed to Payment
+              </Button>
+            </Link>
           </div>
         )}
       </div>

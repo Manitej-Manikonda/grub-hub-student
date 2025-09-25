@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Bell, User, ShoppingCart, Menu, Search } from 'lucide-react';
+import { Bell, User, ShoppingCart, Menu, Search, Brain, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -32,16 +33,30 @@ export function Header({ cartCount = 0, onCartClick, onLoginClick }: HeaderProps
             <a href="#queue" className="text-muted-foreground hover:text-primary transition-smooth">
               Live Queue
             </a>
-            <a href="#planner" className="text-muted-foreground hover:text-primary transition-smooth">
+            <Link to="/meal-planner" className="text-muted-foreground hover:text-primary transition-smooth">
               Meal Planner
-            </a>
-            <a href="#rewards" className="text-muted-foreground hover:text-primary transition-smooth">
+            </Link>
+            <Link to="/rewards" className="text-muted-foreground hover:text-primary transition-smooth">
               Rewards
-            </a>
+            </Link>
           </nav>
 
           {/* Actions */}
           <div className="flex items-center space-x-3">
+            {/* Meal Planner - Mobile */}
+            <Link to="/meal-planner" className="sm:hidden">
+              <Button variant="ghost" size="icon">
+                <Brain className="h-4 w-4" />
+              </Button>
+            </Link>
+            
+            {/* Rewards - Mobile */}
+            <Link to="/rewards" className="sm:hidden">
+              <Button variant="ghost" size="icon">
+                <Award className="h-4 w-4" />
+              </Button>
+            </Link>
+
             {/* Search */}
             <Button variant="ghost" size="icon" className="hidden sm:flex">
               <Search className="h-4 w-4" />
@@ -103,12 +118,12 @@ export function Header({ cartCount = 0, onCartClick, onLoginClick }: HeaderProps
               <a href="#queue" className="p-2 text-muted-foreground hover:text-primary transition-smooth">
                 Live Queue
               </a>
-              <a href="#planner" className="p-2 text-muted-foreground hover:text-primary transition-smooth">
+              <Link to="/meal-planner" className="p-2 text-muted-foreground hover:text-primary transition-smooth">
                 Meal Planner
-              </a>
-              <a href="#rewards" className="p-2 text-muted-foreground hover:text-primary transition-smooth">
+              </Link>
+              <Link to="/rewards" className="p-2 text-muted-foreground hover:text-primary transition-smooth">
                 Rewards
-              </a>
+              </Link>
               <Button 
                 variant="hero" 
                 size="sm"
