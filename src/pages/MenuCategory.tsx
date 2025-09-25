@@ -7,6 +7,20 @@ import { Badge } from '@/components/ui/badge';
 import { FoodCard } from '@/components/FoodCard';
 import { useToast } from '@/hooks/use-toast';
 
+// Import images
+import springRollsImage from '@/assets/spring-rolls.jpg';
+import alooTikkiImage from '@/assets/aloo-tikki.jpg';
+import chickenWingsImage from '@/assets/chicken-wings.jpg';
+import rajmaRiceImage from '@/assets/rajma-rice.jpg';
+import pastaImage from '@/assets/pasta.jpg';
+import friedRiceImage from '@/assets/fried-rice.jpg';
+import butterChickenImage from '@/assets/butter-chicken.jpg';
+import coldCoffeeImage from '@/assets/cold-coffee.jpg';
+import mangoLassiImage from '@/assets/mango-lassi.jpg';
+import orangeJuiceImage from '@/assets/orange-juice.jpg';
+import chocolateBrownieImage from '@/assets/chocolate-brownie.jpg';
+import rasGullaImage from '@/assets/rasgulla.jpg';
+
 // Sample data for different categories
 const categoryData = {
   starters: {
@@ -54,6 +68,48 @@ const categoryData = {
         tags: ['high-protein' as const],
         allergens: ['dairy'],
         description: 'Marinated cottage cheese cubes grilled to perfection'
+      },
+      {
+        id: 'starter-4',
+        name: 'Spring Rolls',
+        price: 55,
+        image: springRollsImage,
+        rating: 4.5,
+        ratingCount: 142,
+        calories: 200,
+        protein: 5,
+        prepTime: 10,
+        tags: ['vegan' as const],
+        allergens: ['gluten'],
+        description: 'Crispy vegetable spring rolls served with sweet and sour sauce'
+      },
+      {
+        id: 'starter-5',
+        name: 'Aloo Tikki',
+        price: 40,
+        image: alooTikkiImage,
+        rating: 4.6,
+        ratingCount: 178,
+        calories: 250,
+        protein: 4,
+        prepTime: 8,
+        tags: ['vegan' as const],
+        allergens: [],
+        description: 'Crispy potato cutlets served with mint and tamarind chutney'
+      },
+      {
+        id: 'starter-6',
+        name: 'Chicken Wings',
+        price: 120,
+        image: chickenWingsImage,
+        rating: 4.7,
+        ratingCount: 234,
+        calories: 380,
+        protein: 25,
+        prepTime: 15,
+        tags: ['high-protein' as const],
+        allergens: [],
+        description: 'Spicy buffalo chicken wings with celery sticks'
       }
     ]
   },
@@ -88,6 +144,62 @@ const categoryData = {
         tags: ['vegan' as const],
         allergens: ['gluten'],
         description: 'Spicy chickpea curry served with fluffy fried bread'
+      },
+      {
+        id: 'main-3',
+        name: 'Rajma Rice',
+        price: 85,
+        image: rajmaRiceImage,
+        rating: 4.4,
+        ratingCount: 167,
+        calories: 450,
+        protein: 14,
+        prepTime: 18,
+        tags: ['high-protein' as const],
+        allergens: [],
+        description: 'Kidney bean curry served with steamed basmati rice'
+      },
+      {
+        id: 'main-4',
+        name: 'Penne Pasta',
+        price: 110,
+        image: pastaImage,
+        rating: 4.6,
+        ratingCount: 198,
+        calories: 520,
+        protein: 16,
+        prepTime: 12,
+        tags: ['vegan' as const],
+        allergens: ['gluten'],
+        description: 'Penne pasta in rich marinara sauce with fresh basil'
+      },
+      {
+        id: 'main-5',
+        name: 'Vegetable Fried Rice',
+        price: 70,
+        image: friedRiceImage,
+        rating: 4.3,
+        ratingCount: 145,
+        calories: 380,
+        protein: 8,
+        prepTime: 10,
+        tags: ['vegan' as const],
+        allergens: [],
+        description: 'Colorful fried rice with fresh vegetables and soy sauce'
+      },
+      {
+        id: 'main-6',
+        name: 'Butter Chicken',
+        price: 140,
+        image: butterChickenImage,
+        rating: 4.8,
+        ratingCount: 287,
+        calories: 620,
+        protein: 32,
+        prepTime: 25,
+        tags: ['high-protein' as const],
+        allergens: ['dairy'],
+        description: 'Tender chicken in rich, creamy tomato butter sauce'
       }
     ]
   },
@@ -122,6 +234,48 @@ const categoryData = {
         tags: ['vegan' as const],
         allergens: [],
         description: 'Fresh lime juice with mint and a hint of black salt'
+      },
+      {
+        id: 'bev-3',
+        name: 'Cold Coffee',
+        price: 50,
+        image: coldCoffeeImage,
+        rating: 4.7,
+        ratingCount: 189,
+        calories: 180,
+        protein: 6,
+        prepTime: 5,
+        tags: ['vegan' as const],
+        allergens: ['dairy'],
+        description: 'Iced coffee with whipped cream and chocolate drizzle'
+      },
+      {
+        id: 'bev-4',
+        name: 'Mango Lassi',
+        price: 45,
+        image: mangoLassiImage,
+        rating: 4.8,
+        ratingCount: 234,
+        calories: 150,
+        protein: 5,
+        prepTime: 3,
+        tags: ['vegan' as const],
+        allergens: ['dairy'],
+        description: 'Sweet mango yogurt drink, traditional and refreshing'
+      },
+      {
+        id: 'bev-5',
+        name: 'Fresh Orange Juice',
+        price: 35,
+        image: orangeJuiceImage,
+        rating: 4.5,
+        ratingCount: 167,
+        calories: 110,
+        protein: 2,
+        prepTime: 2,
+        tags: ['vegan' as const],
+        allergens: [],
+        description: 'Freshly squeezed orange juice packed with vitamin C'
       }
     ]
   },
@@ -156,6 +310,34 @@ const categoryData = {
         tags: ['vegan' as const],
         allergens: ['dairy'],
         description: 'Traditional Indian frozen dessert with cardamom and pistachios'
+      },
+      {
+        id: 'dessert-3',
+        name: 'Chocolate Brownie',
+        price: 65,
+        image: chocolateBrownieImage,
+        rating: 4.8,
+        ratingCount: 198,
+        calories: 450,
+        protein: 6,
+        prepTime: 5,
+        tags: ['vegan' as const],
+        allergens: ['gluten', 'dairy'],
+        description: 'Rich chocolate brownie served warm with vanilla ice cream'
+      },
+      {
+        id: 'dessert-4',
+        name: 'Rasgulla',
+        price: 35,
+        image: rasGullaImage,
+        rating: 4.6,
+        ratingCount: 156,
+        calories: 180,
+        protein: 4,
+        prepTime: 2,
+        tags: ['vegan' as const],
+        allergens: ['dairy'],
+        description: 'Spongy cottage cheese balls in sweet sugar syrup'
       }
     ]
   }
